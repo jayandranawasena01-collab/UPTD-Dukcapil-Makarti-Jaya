@@ -1,0 +1,22 @@
+{
+  "name": "UPTD Dukcapil Makarti Jaya",
+  "short_name": "Dukcapil Makarti",
+  "description": "Portal Layanan Administrasi Kependudukan UPTD Dukcapil Makarti Jaya",
+  "start_url": "/UPTD-Dukcapil-Makarti-Jaya/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#1e3a8a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
