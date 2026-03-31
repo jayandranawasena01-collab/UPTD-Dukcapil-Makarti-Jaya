@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UPTD Dukcapil Makarti Jaya</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/98/Kota_Bengkulu.png" />
-  <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>UPTD Dukcapil Makarti Jaya</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/9/98/Kota_Bengkulu.png" />
+    
+    <!-- Kode PWA untuk Manifest dan Service Worker -->
+    <link rel="manifest" href="manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+
+    <style>
     html, body {
       margin: 0;
       padding: 0;
