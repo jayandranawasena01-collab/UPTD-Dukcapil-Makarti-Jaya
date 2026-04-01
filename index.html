@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>UPTD Dukcapil Makarti Jaya</title>
-    <link rel="icon" href="https://drive.google.com/uc?export=view&id=19TwjITIo5eiYf4zUWqjWYeRDfb1xT-pN" />
+    
+    <!-- Link Icon telah diubah ke Wikimedia agar bisa terbaca oleh browser -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/9/98/Kota_Bengkulu.png" />
+    
     <!-- Kode PWA untuk Manifest dan Service Worker -->
     <link rel="manifest" href="manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js');
+                // Memastikan Service Worker hanya didaftarkan pada protokol yang didukung
+                if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
+                    navigator.serviceWorker.register('sw.js').catch((error) => {
+                        console.log('Pendaftaran ServiceWorker gagal: ', error);
+                    });
+                } else {
+                    console.log('ServiceWorker diskip karena berjalan di lingkungan lokal/preview.');
+                }
             });
         }
     </script>
