@@ -4,22 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>UPTD Dukcapil Makarti Jaya</title>
-    
-    <!-- Link Icon menggunakan Google Drive (Disesuaikan agar lebih ramah favicon) -->
-    <link rel="icon" type="image/png" href="https://drive.google.com/uc?id=19TwjITIo5eiYf4zUWqjWYeRDfb1xT-pN" />
-    
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=19TwjITIo5eiYf4zUWqjWYeRDfb1xT-pN" />
     <!-- Kode PWA untuk Manifest dan Service Worker -->
     <link rel="manifest" href="manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // Memastikan Service Worker hanya didaftarkan pada protokol yang didukung
+                // Memastikan Service Worker hanya didaftarkan pada protokol yang didukung (http/https)
                 if (window.location.protocol === 'http:' || window.location.protocol === 'https:') {
                     navigator.serviceWorker.register('sw.js').catch((error) => {
                         console.log('Pendaftaran ServiceWorker gagal: ', error);
                     });
                 } else {
-                    console.log('ServiceWorker diskip karena berjalan di lingkungan lokal/preview.');
+                    console.log('Pendaftaran ServiceWorker dilewati karena berjalan di lingkungan lokal/preview.');
                 }
             });
         }
